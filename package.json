@@ -6,7 +6,7 @@
     "test": "npx wdio ./config/local.conf.js --parallel=false",
     "test:parallel": "npx wdio ./config/local.conf.js --parallel=true",
     "test:multiBrowser": "DEBUG=false && npx wdio ./config/multiBrowser.conf.js --parallel=false",
-    "test:debug": "export TEST_CONTEXT=funcional && DEBUG=true npx wdio ./config/local.conf.js --parallel=false",
+    "test:debug": "npx wdio ./config/localDebug.conf.js --parallel=false",
     "test:devtools": "export TEST_CONTEXT=performance && npx wdio ./config/devtools.conf.js --parallel=false",
     "test:visual": "export TEST_CONTEXT=visual VISUAL_CONTEXT=wdio && DEBUG=true npx wdio ./config/visual.conf.js --parallel=false",
     "test:applitools": "export TEST_CONTEXT=visual VISUAL_CONTEXT=applitools && DEBUG=true npx wdio ./config/applitools.conf.js --parallel=false",
