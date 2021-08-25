@@ -15,11 +15,6 @@ Configurações globais Git.
 git config --global user.name "Lucas Barros"
 git config --global user.name "lucas.barros@amaggi.com.br"
 
-
-lucasbarrosamaggi
-L07077c44@@
-
-
 Criar token Pessoal GitHub
 https://docs.github.com/pt/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
@@ -35,3 +30,27 @@ Commitar na branch
 	git commit -m "O que vao subir"
 Enviar os arquivos 
 	git push
+Merge dos arquivos
+	git merge NomeBranch
+	git push
+Deletar Branch
+	git branch -d NomeBranch
+	git push origin --delete lucas -- Se já foi enviado.
+rebase --> sem histórico
+merge --> Com histórico  git merge lucas
+
+Variáveis de Ambiente No Windows
+	Incluir novo
+		java -> JAVA_HOME - C:\Program Files\Java\jdk-11.0.12
+	Editar Path
+		Incluir Novo --> %JAVA_HOME%\bin
+		Incluir Novo --> C:\Python27
+
+Possibilidade de utilizar o Yarn no Projeto. Intalar o pacote.  --global serve para todos os projetos.
+	npm install --global yarn
+Rodar no CMD com Administrador
+	Deve estar no raiz do projeto
+		yarn install ou npm install
+
+Para rodar os testes Utilizar 
+	yarn run ou npm run....

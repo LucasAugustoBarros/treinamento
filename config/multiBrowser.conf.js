@@ -35,10 +35,10 @@ const capabilities = debug
             browser: {
                 name: 'chrome',
             },
-            device: 'MacBook Pro',
+            device: 'HP EliteBook',
             platform: {
-                name: 'OSX',
-                version: '10.15.5',
+                name: 'Windows',
+                version: '10 Pro',
             },
         }, 'goog:chromeOptions': { args: ['--window-size=1800,1500'] }, maxInstances: 5
     }]
@@ -52,10 +52,10 @@ const capabilities = debug
                 browser: {
                     name: 'chrome',
                 },
-                device: 'MacBook Pro',
+                device: 'HP EliteBook',
                 platform: {
-                    name: 'OSX',
-                    version: '10.15.5',
+                    name: 'Windows',
+                    version: '10 Pro',
                 },
             },
             //

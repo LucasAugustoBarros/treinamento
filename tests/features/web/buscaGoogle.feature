@@ -6,4 +6,4 @@ Feature: Realizar busca de Framework no Google
     Scenario: Buscar por Robot Framework
         Given estou na página de busca do google
         When informo o framework desejado "Robot Framework"
-        Then visualizo o Feedback do google sobre a pesquisa "Robot FrameworkK"
+        Then visualizo o Feedback do google sobre a pesquisa "Robot Framework"

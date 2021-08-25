@@ -7,7 +7,7 @@ const assert = require('chai').assert;
 
 class HomePage {
     // define os elementos
-    get googleImg() { return $('img[alt="Google"]') }
+    get googleImg() { return $('[id="hpctaplay"]') }
     get campoPesquisaTxt() { return $('input[title="Pesquisar"]') }
     get pesquisarBtn() { return $('[jsname] [value="Pesquisa Google"]') }
 
