@@ -10,7 +10,7 @@ const dataTimeInicio = new Date();
 const sourceSpecDirectory = `tests/features/web`;
 const jsonTmpDirectory = `tests/reports/json/`;
 
-let featureFilePath = `${sourceSpecDirectory}/*.feature`;
+let featureFilePath = `${sourceSpecDirectory}/cadastroEmpresa.feature`;
 // If parallel execution is set to true, then create the Split the feature files
 // And store then in a tmp spec directory (created inside `the source spec directory)
 if (argv.parallel === 'true') {

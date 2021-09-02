@@ -5,7 +5,7 @@
  */
 
 const expect = require('chai').expect;
-// let estouPagina = "Preencha o formulário com as informações da sua empresa"
+const path = require('path');
 
 class FormCadEmpresaPage {
     // define os elementos
@@ -32,7 +32,7 @@ class FormCadEmpresaPage {
     get respNomeTxt() { return $('input[id="first_16"]') } // Campo Nome Responsável empresa
     get respSobrenomeTxt() { return $('input[id="last_16"]') } // Campo Nome Responsável empresa
     get celularRespTxt() { return $('input[name="q17_celularDo17[full]"]') }
-    get cpfRespTxt() { return $('input[name="q18_cpfDo"]"]') }
+    get cpfRespTxt() { return $('input[name="q18_cpfDo"]') }
     // Segundo Formulário Responsável Financeiro empresa
     get respFinanNomeTxt() { return $('input[id="first_19"]') } // Campo Nome Responsável Financeiro empresa
     get respFinanSobrenomeTxt() { return $('input[id="last_19"]') } // Campo Nome Responsável Financeiro empresa
@@ -99,8 +99,48 @@ class FormCadEmpresaPage {
     //Botão Proximo
     clicarProximo() {
         this.proximoBtn.waitForDisplayed();
-        this.diaPagamentoBoletoTxt.click();
+        this.proximoBtn.click();
     }
 
+    //Responsável Empresa
+    informarRespEmpresa() {
+        this.respNomeTxt.waitForDisplayed();
+        this.respNomeTxt.setValue("Lucas Augusto");
+        this.respSobrenomeTxt.setValue("Barros");
+        this.celularRespTxt.setValue("65992108952");
+        this.cpfRespTxt.setValue("09887665428");
+    }
+
+    //Responsável Finaneciro Empresa
+    informarRespFinanEmpresa() {
+        this.respFinanNomeTxt.waitForDisplayed();
+        this.respFinanNomeTxt.setValue("Lucas Augusto");
+        this.respFinanSobrenomeTxt.setValue("Barros");
+        this.telefoneRespFinanTxt.setValue("6592108952");
+    }
+
+    //Responsável Contabilidade
+    informarDadosContabilidade() {
+        this.nomeContabilidadeTxt.waitForDisplayed();
+        this.nomeContabilidadeTxt.setValue("Conta com a Gente");
+        this.contadorNomeTxt.setValue("Contador");
+        this.contadorSobrenomeTxt.setValue("de história");
+        this.emailContadortxt.setValue("contador@contacomagente.com.br");
+        this.celularContadorTxt.setValue("65999999999");
+    }
+
+    //Upload de Arquivo
+    enviarComprovantes() {
+        const filePath = path.join(__dirname, '../../support/util/upload/comprovativo-situacao-cnpj.jpg');
+        const remoteFilePath = browser.uploadFile(filePath);
+        this.uploadArquivoUp.setValue(remoteFilePath);
+        expect(this.uploadArquivoLbl.getText()).to.equal("comprovativo-situacao-cnpj.jpg");
+    }
+
+    //Salvar Cadastro
+    enviarFormEmpresa() {
+        this.enviarBtn.waitForClickable();
+        this.enviarBtn.click();
+    }
 }
 module.exports = FormCadEmpresaPage;
