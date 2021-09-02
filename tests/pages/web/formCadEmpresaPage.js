@@ -50,7 +50,7 @@ class FormCadEmpresaPage {
     get voltarBtn() { return $('button[id="form-pagebreak-next_14"]') } // Botão de voltar
     get enviarBtn() { return $('#input_2') } // Botão de enviar
     // Mensagem enviado
-    get msgSucessoLbl() { return $('h1[class="thankyou-main-text ty-text"]') } // mensagem de sucesso "Enviado com sucesso!"
+    get msgSucessoLbl() { return $('.thankyou-main-text.ty-text"]') } // mensagem de sucesso "Enviado com sucesso!"
 
     /**
      * Método de chamada de URL
