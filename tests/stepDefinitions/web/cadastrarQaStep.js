@@ -22,7 +22,3 @@ When(/^eu preencho todos os campos de QA solicitados$/, () => {
     formCadQaPage.clicarTermos();
     formCadQaPage.enviarFormQa();
 });
-
-Then(/^eu visualizo a mensagem "([^"]*)"$/, (mensagem) => {
-    sucessoFormPage.validarMsgSucesso(mensagem);
-});
