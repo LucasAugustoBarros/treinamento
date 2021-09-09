@@ -10,4 +10,4 @@ Feature: Realizar cadastro de QA
     Scenario: Cadastrar um QA com sucesso.
         Given eu estou na página de cadastro de QA
         When eu preencho todos os campos de QA solicitados
-        Then eu visualizo a mensagem de "Obrigado!"
+        Then eu visualizo a mensagem "Obrigado!"

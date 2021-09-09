@@ -26,6 +26,7 @@ class FormCadQaPage {
     get termos0Lbl() { return $('label[class="Concordo com os "]') }
     get termosLbl() { return $('div#cid_11 > div > div > input[id="widget_settings_11"]') }
     get termos1Lbl() { return $('input[id="input_11"]') }
+    get termos2Lbl() { return $('div[data-widget-name="Termos e Condições"]') }
     // Botões voltar e enviar
     get enviarBtn() { return $('#input_2') } // Botão de enviar
 
@@ -68,7 +69,6 @@ class FormCadQaPage {
         this.uploadArquivoUp.setValue(remoteFilePath);
         expect(this.uploadArquivoLbl.getText()).to.equal("comprovativo-situacao-cnpj.jpg");
     }
-
     //Clicar Concordo com os Termos
     clicarTermos() {
         this.uploadArquivoLbl.waitForDisplayed();
@@ -78,7 +78,6 @@ class FormCadQaPage {
         browser.keys('Tab');
         browser.keys('Space');
         browser.pause(2000);
-
     }
 
     //Salvar Cadastro
