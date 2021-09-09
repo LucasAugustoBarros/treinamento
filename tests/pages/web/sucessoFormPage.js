@@ -1,12 +1,12 @@
 /**
- * File: sucessoFormEmpresaPage.js
+ * File: sucessoFormPage.js
  * Autor: Lucas Barros
- * Data: 01/09/2021
+ * Data: 09/09/2021
  */
 
 const expect = require('chai').expect;
 
-class SucessoFormEmpresaPage {
+class SucessoFormPage {
     // Define Elementos
 
     get msgSucessoLbl() { return $('h1[class="thankyou-main-text ty-text"]') } // mensagem de sucesso "Enviado com sucesso!"
@@ -16,8 +16,8 @@ class SucessoFormEmpresaPage {
 
     validarMsgSucesso(mensagem) {
         this.msgSucessoLbl.waitForDisplayed();
-        expect(this.msgSucessoLbl.getText()).to.equal(mensagem)
+        expect(this.msgSucessoLbl.getText()).to.eql(mensagem)
     }
 
 }
-module.exports = SucessoFormEmpresaPage;
+module.exports = SucessoFormPage;

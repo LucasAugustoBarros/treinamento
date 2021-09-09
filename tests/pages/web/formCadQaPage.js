@@ -23,10 +23,7 @@ class FormCadQaPage {
     get uploadArquivoUp() { return $('.fileupload-input') }
     get uploadArquivoLbl() { return $('.qq-upload-file') }
     // Clicar Termos
-    get termos0Lbl() { return $('label[class="Concordo com os "]') }
-    get termosLbl() { return $('div#cid_11 > div > div > input[id="widget_settings_11"]') }
-    get termos1Lbl() { return $('input[id="input_11"]') }
-    get termos2Lbl() { return $('div[data-widget-name="Termos e Condições"]') }
+    get checkBoxTermoClick() { return $('.icheckbox_minimal') }
     // Botões voltar e enviar
     get enviarBtn() { return $('#input_2') } // Botão de enviar
 
@@ -71,19 +68,15 @@ class FormCadQaPage {
     }
     //Clicar Concordo com os Termos
     clicarTermos() {
-        this.uploadArquivoLbl.waitForDisplayed();
-        this.uploadArquivoLbl.click();
-        browser.pause(2000);
-        browser.keys('Tab');
-        browser.keys('Tab');
-        browser.keys('Space');
-        browser.pause(2000);
+        browser.switchToFrame($('#customFieldFrame_11'));
+        this.checkBoxTermoClick.waitForDisplayed();
+        this.checkBoxTermoClick.click();
+        browser.switchToParentFrame();
     }
 
     //Salvar Cadastro
     enviarFormQa() {
         this.enviarBtn.waitForClickable();
-        browser.pause(1000);
         this.enviarBtn.click();
     }
 }

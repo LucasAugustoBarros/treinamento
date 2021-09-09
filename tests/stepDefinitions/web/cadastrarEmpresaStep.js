@@ -5,10 +5,10 @@
  */
 const { Given, When, Then } = require('cucumber');
 const FormCadEmpresaPage = require('../../pages/web/formCadEmpresaPage');
-const SucessoFormEmpresaPage = require('../../pages/web/sucessoFormEmpresaPage');
+const SucessoFormPage = require('../../pages/web/sucessoFormPage');
 
 const formCadEmpresaPage = new FormCadEmpresaPage();
-const sucessoFormEmpresaPage = new SucessoFormEmpresaPage();
+const sucessoFormPage = new SucessoFormPage();
 
 Given(/^eu estou na página de cadastro de empresa$/, () => {
     formCadEmpresaPage.open();
@@ -28,5 +28,5 @@ When(/^eu preencho todos os campos solicitados$/, () => {
 });
 
 Then(/^eu visualizo a mensagem de "([^"]*)"$/, (mensagem) => {
-    sucessoFormEmpresaPage.validarMsgSucesso(mensagem);
+    sucessoFormPage.validarMsgSucesso(mensagem);
 });
