@@ -10,7 +10,7 @@ const dataTimeInicio = new Date();
 const sourceSpecDirectory = `tests/features/web`;
 const jsonTmpDirectory = `tests/reports/json/`;
 
-let featureFilePath = `${sourceSpecDirectory}/cadastroEmpresa.feature`;
+let featureFilePath = `${sourceSpecDirectory}/*.feature`;
 // If parallel execution is set to true, then create the Split the feature files
 // And store then in a tmp spec directory (created inside `the source spec directory)
 if (argv.parallel === 'true') {
@@ -232,7 +232,7 @@ exports.config = {
         source: true,       // <boolean> hide source uris
         profile: [],        // <string[]> (name) specify the profile to use
         strict: false,      // <boolean> fail if there are any undefined or pending steps
-        tagExpression: '',  // <string> (expression) only execute the features or scenarios with tags matching the expression
+        tagExpression: '@teste',  // <string> (expression) only execute the features or scenarios with tags matching the expression
         timeout: 90000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },

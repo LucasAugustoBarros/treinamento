@@ -1,7 +1,7 @@
 /**
  * File: formCadEmpresaPage.js
  * Autor: Lucas Barros
- * Data: 31/08/2020
+ * Data: 31/08/2021
  */
 
 const expect = require('chai').expect;
@@ -49,8 +49,6 @@ class FormCadEmpresaPage {
     // Botões voltar e enviar
     get voltarBtn() { return $('button[id="form-pagebreak-next_14"]') } // Botão de voltar
     get enviarBtn() { return $('#input_2') } // Botão de enviar
-    // Mensagem enviado
-    get msgSucessoLbl() { return $('.thankyou-main-text.ty-text"]') } // mensagem de sucesso "Enviado com sucesso!"
 
     /**
      * Método de chamada de URL

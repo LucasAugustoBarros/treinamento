@@ -6,7 +6,6 @@ Feature: Realizar cadastro de Empresa
     Eu desejo poder cadastrar empresas
     Para que possa ter o registro de futuros clientes.
 
-    @teste
     Scenario: Cadastrar Empresa com sucesso.
         Given eu estou na página de cadastro de empresa
         When eu preencho todos os campos solicitados

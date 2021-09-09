@@ -1,4 +1,0 @@
-Link de apoio:
-https://github.com/wswebcreation/wdio-image-comparison-service/blob/master/docs/OPTIONS.md#plugin-options
-https://github.com/wswebcreation/webdriver-image-comparison/blob/master/docs/OPTIONS.md#plugin-options
-https://webdriver.io/docs/wdio-image-comparison-service.html
