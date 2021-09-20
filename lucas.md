@@ -60,3 +60,4 @@ Iframe -> É que se tem um HTML dentro de outro HTML.
 Resetar o status do Git.
 	git reset
 	
+git remote set-url --add --push origin https://github.com/LucasAugustoBarros/treinamento.git
