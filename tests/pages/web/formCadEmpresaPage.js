@@ -12,12 +12,17 @@ const GeraNomePF = require('../../support/util/helpers/geral/geraNomePF');
 const GeraEmail = require('../../support/util/helpers/geral/geraEmail');
 const GeraCpfCnpj = require('../../support/util/helpers/geral/geraCpfCnpj');
 const GeraIE = require('../../support/util/helpers/geral/geraIE');
+const GeraCEP = require('../../support/util/helpers/geral/geraCEP');
+const GeraTelefone = require('../../support/util/helpers/geral/geraTelefone');
 
 const geraNomePJ = new GeraNomePJ();
 const geraNomePF = new GeraNomePF();
 const geraEmail = new GeraEmail();
+const geraCEP = new GeraCEP();
 const geraCpfCnpj = new GeraCpfCnpj();
 const geraIE = new GeraIE();
+const geraTelefone = new GeraTelefone();
+
 
 class FormCadEmpresaPage {
     // define os elementos
@@ -87,7 +92,7 @@ class FormCadEmpresaPage {
         this.iETxt.setValue(geraIE.geraIE11());
         this.proprietarioNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
         this.proprietarioSobrenomeTxt.setValue(geraNomePF.geraSobrenome());
-        this.telefonePropTxt.setValue("6592108952");
+        this.telefonePropTxt.setValue(geraTelefone.geraTelefone10());
     }
 
     //Endereço empresa
@@ -97,7 +102,7 @@ class FormCadEmpresaPage {
         this.enderecoContinuacaoTxt.setValue("São João 2021");
         this.cidadeTxt.setValue("Cuiabá");
         this.estadoTxt.setValue("Mato Grosso");
-        this.cepTxt.setValue("78000000");
+        this.cepTxt.setValue(geraCEP.geraCEPAleatorio());
     }
 
     //Informar melhor data Pagamento
@@ -117,7 +122,7 @@ class FormCadEmpresaPage {
         this.respNomeTxt.waitForDisplayed();
         this.respNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
         this.respSobrenomeTxt.setValue(geraNomePF.geraSobrenome());
-        this.celularRespTxt.setValue("65992108952");
+        this.celularRespTxt.setValue(geraTelefone.geraTelefone11());
         this.cpfRespTxt.setValue(geraCpfCnpj.cpf());
     }
 
@@ -126,7 +131,7 @@ class FormCadEmpresaPage {
         this.respFinanNomeTxt.waitForDisplayed();
         this.respFinanNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
         this.respFinanSobrenomeTxt.setValue(geraNomePF.geraSobrenome());
-        this.telefoneRespFinanTxt.setValue("6592108952");
+        this.telefoneRespFinanTxt.setValue(geraTelefone.geraTelefone10());
     }
 
     //Responsável Contabilidade
@@ -136,7 +141,7 @@ class FormCadEmpresaPage {
         this.contadorNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
         this.contadorSobrenomeTxt.setValue(geraNomePF.geraSobrenome());
         this.emailContadortxt.setValue(geraEmail.emailParceiro());
-        this.celularContadorTxt.setValue("65999999999");
+        this.celularContadorTxt.setValue(geraTelefone.geraTelefone11());
     }
 
     //Upload de Arquivo

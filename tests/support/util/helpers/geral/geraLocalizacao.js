@@ -5,12 +5,13 @@
  */
 
 let { sample } = require('underscore');
-let logradouro = require('../util/helpers/dados/localizacao/logradouro');
-let bairro = require('../util/helpers/dados/localizacao/bairro');
-let complemento = require('../util/helpers/dados/localizacao/complemento');
+let logradouro = require('../dados/localizacao/logradouro');
+let bairro = require('../dados/localizacao/bairro');
+let complemento = require('../dados/localizacao/complemento');
+let cidade = require('../dados/localizacao/cidade');
+let estado = require('../dados/localizacao/estado');
 const fs = require('fs');
 let path = require('path');
-let logradGravado, bairroGravado, complementoGravado, numeroGravado, pontoRefGravado, data, toFile, stringFile;
 
 class GeraLocalizacao {
 
@@ -34,73 +35,34 @@ class GeraLocalizacao {
             var rnum = Math.floor(Math.random() * aleatorio.length);
             sufixo += aleatorio.substring(rnum, rnum + 1);
         }
-
-        numeroGravado = {
-            nrG: sufixo
-        };
-
-        data = JSON.stringify(numeroGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/numero.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return sufixo;
     }
 
     geraLogradouro() {
         let lograd;
         lograd = sample(logradouro).split(' ')[0];
-
-        logradGravado = {
-            logradG: lograd
-        };
-
-        data = JSON.stringify(logradGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/logradouro.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return lograd;
     }
 
     geraBairro() {
         let bairr;
         bairr = sample(bairro).split(' ')[0];
-
-        bairroGravado = {
-            bairroG: bairr
-        };
-
-        data = JSON.stringify(bairroGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/bairro.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return bairr;
     }
-
+    geraCidade() {
+        let cidadee;
+        cidadee = sample(cidade).split(' ')[0];
+        return cidadee;
+    }
+    geraEstado() {
+        let estadoo;
+        estadoo = sample(estado).split(' ')[0];
+        return estadoo;
+    }
     geraComplemento() {
         let comp;
         comp = sample(complemento).split(' ')[0];
         var comple = comp+" "+(this.geraAleatorio());
-
-        complementoGravado = {
-            compleG: comple
-        };
-
-        data = JSON.stringify(complementoGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/complemento.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return comple;
     }
 
@@ -108,18 +70,6 @@ class GeraLocalizacao {
         let pontoRef;
         pontoRef = sample(complemento).split(' ')[0];
         var pontoRefe = "Próximo ao "+pontoRef+" "+(this.geraAleatorio());
-
-        pontoRefGravado = {
-            pontoRefG: pontoRefe
-        };
-
-        data = JSON.stringify(pontoRefGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/pontoRef.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return pontoRefe;
     }
 }

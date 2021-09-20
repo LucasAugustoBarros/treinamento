@@ -7,8 +7,7 @@
 const fs = require('fs');
 let path = require('path');
 let { sample } = require('underscore');
-let ceps = require('../util/helpers/dados/localizacao/cep');
-let cepGravado, data, toFile, stringFile;
+let ceps = require('../dados/localizacao/cep');
 
 class GeraCEP {
 
