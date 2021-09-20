@@ -48,12 +48,9 @@ class GeraNomePJ {
         return nomeCompleto;
     }
 
-    geraNomeFantasia(nomeCompletoPJ) {
-
-        var nomePJ = nomeCompletoPJ; // o nome completo
-        var partes = nomePJ.split(' '); // dividir em partes
-        var primeiros_nomes = partes.join(' '); // criar uma string separada por espaços(' ') com as partes restantes
-        var nomeFantasia = `${primeiros_nomes}`; //resultado
+    geraNomeFantasia() {
+        let nomeFantasia;
+        nomeFantasia = sample(sobrenomes).split(' ')[0];
         return nomeFantasia;
     }
 }
