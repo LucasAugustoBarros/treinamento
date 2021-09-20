@@ -8,10 +8,8 @@ const fs = require('fs');
 let path = require('path');
 
 let { sample } = require('underscore');
-let nomesHomem = require('../util/helpers/dados/pessoa/nomes-homem');
-let sobrenomes = require('../util/helpers/dados/pessoa/sobrenomes');
-
-let nomeGravado, nomeContatoGravado, nomeContato2Gravado, data, toFile, stringFile;
+let nomesHomem = require('../dados/pessoa/nomes-homem');
+let sobrenomes = require('../dados/pessoa/sobrenomes');
 
 class GeraNomePF {
 
@@ -32,57 +30,21 @@ class GeraNomePF {
 
     geraNomeCompleto() {
         var nomeCompleto;
-        nomeCompleto = (GeraNomePF.geraPrimeiroNome() + " " + GeraNomePF.geraSobrenome());
-
-        nomeGravado = {
-            nomeG: nomeCompleto
-        };
-
-        data = JSON.stringify(nomeGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/nomePF.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
+        nomeCompleto = (this.geraPrimeiroNome() + " " + this.geraSobrenome());
         return nomeCompleto;
 
     }
 
     geraNomeContato() {
         var nomeCoontato;
-        nomeCoontato = (GeraNomePF.geraPrimeiroNome() + " " + GeraNomePF.geraSobrenome());
-
-        nomeContatoGravado = {
-            nomeContatoG: nomeCoontato
-        };
-
-        data = JSON.stringify(nomeContatoGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/nomeContato.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
+        nomeCoontato = (this.geraPrimeiroNome() + " " + this.geraSobrenome());
         return nomeCoontato;
 
     }
 
     geraNomeContato2() {
         var nomeCoontato;
-        nomeCoontato = (GeraNomePF.geraPrimeiroNome() + " " + GeraNomePF.geraSobrenome());
-
-        nomeContato2Gravado = {
-            nomeContato2G: nomeCoontato
-        };
-
-        data = JSON.stringify(nomeContato2Gravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/nomeContato2.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
+        nomeCoontato = (this.geraPrimeiroNome() + " " + this.geraSobrenome());
         return nomeCoontato;
 
     }

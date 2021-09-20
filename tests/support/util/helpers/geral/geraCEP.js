@@ -22,18 +22,6 @@ class GeraCEP {
             sufixo += aleatorio.substring(rnum, rnum + 1);
         }
         cep = "780" + sufixo;
-
-        cepGravado = {
-            cepG: cep
-        };
-
-        data = JSON.stringify(cepGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/cep.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return cep;
     }
 

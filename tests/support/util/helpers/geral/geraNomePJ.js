@@ -8,8 +8,8 @@ const fs = require('fs');
 let path = require('path');
 
 let { sample } = require('underscore');
-let tipo = require('../util/helpers/dados/empresa/tipo-empresa');
-let sobrenomes = require('../util/helpers/dados/empresa/sobrenome-empresa');
+let tipo = require('../../helpers/dados/empresa/tipo-empresa');
+let sobrenomes = require('../../helpers/dados/empresa/sobrenome-empresa');
 
 let nomeCompletoUnidadeVeicularGravado, data, toFile, stringFile, nomeFantasaTransportadoraGravado, nomeCompletoTransportadoraPJGravado;
 
@@ -32,7 +32,7 @@ class GeraNomePJ {
 
     geraNomeCompletoPJ() {
         var nomeCompleto;
-        nomeCompleto = (GeraNomePJ.geraNome() + " " + GeraNomePJ.geraTipoEmpresa());
+        nomeCompleto = (this.geraNome() + " " + this.geraTipoEmpresa());
         return nomeCompleto;
     }
 

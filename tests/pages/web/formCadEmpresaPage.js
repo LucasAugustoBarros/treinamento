@@ -7,6 +7,18 @@
 const expect = require('chai').expect;
 const path = require('path');
 
+const GeraNomePJ = require('../../support/util/helpers/geral/geraNomePJ');
+const GeraNomePF = require('../../support/util/helpers/geral/geraNomePF');
+const GeraEmail = require('../../support/util/helpers/geral/geraEmail');
+const GeraCpfCnpj = require('../../support/util/helpers/geral/geraCpfCnpj');
+const GeraIE = require('../../support/util/helpers/geral/geraIE');
+
+const geraNomePJ = new GeraNomePJ();
+const geraNomePF = new GeraNomePF();
+const geraEmail = new GeraEmail();
+const geraCpfCnpj = new GeraCpfCnpj();
+const geraIE = new GeraIE();
+
 class FormCadEmpresaPage {
     // define os elementos
     get subTituloLbl() { return $('div[id="subHeader_1"]') }  // "Preencha o formulário com as informações da sua empresa"
@@ -69,12 +81,12 @@ class FormCadEmpresaPage {
     //Cadastro empresa
     informarDadosEmpresa() {
         this.razaoSocialTxt.waitForDisplayed();
-        this.razaoSocialTxt.setValue("Razão Social Lucas");
+        this.razaoSocialTxt.setValue(geraNomePJ.geraNomeCompletoPJ());
         this.nomeFantasiaTxt.setValue("Nome Fantasia Lucas Barros");
-        this.cnpjTxt.setValue("01010101010101");
-        this.iETxt.setValue("13123456");
-        this.proprietarioNomeTxt.setValue("Lucas Augusto");
-        this.proprietarioSobrenomeTxt.setValue("Barros");
+        this.cnpjTxt.setValue(geraCpfCnpj.cnpj());
+        this.iETxt.setValue(geraIE.geraIE11());
+        this.proprietarioNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
+        this.proprietarioSobrenomeTxt.setValue(geraNomePF.geraSobrenome());
         this.telefonePropTxt.setValue("6592108952");
     }
 
@@ -103,27 +115,27 @@ class FormCadEmpresaPage {
     //Responsável Empresa
     informarRespEmpresa() {
         this.respNomeTxt.waitForDisplayed();
-        this.respNomeTxt.setValue("Lucas Augusto");
-        this.respSobrenomeTxt.setValue("Barros");
+        this.respNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
+        this.respSobrenomeTxt.setValue(geraNomePF.geraSobrenome());
         this.celularRespTxt.setValue("65992108952");
-        this.cpfRespTxt.setValue("09887665428");
+        this.cpfRespTxt.setValue(geraCpfCnpj.cpf());
     }
 
     //Responsável Finaneciro Empresa
     informarRespFinanEmpresa() {
         this.respFinanNomeTxt.waitForDisplayed();
-        this.respFinanNomeTxt.setValue("Lucas Augusto");
-        this.respFinanSobrenomeTxt.setValue("Barros");
+        this.respFinanNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
+        this.respFinanSobrenomeTxt.setValue(geraNomePF.geraSobrenome());
         this.telefoneRespFinanTxt.setValue("6592108952");
     }
 
     //Responsável Contabilidade
     informarDadosContabilidade() {
         this.nomeContabilidadeTxt.waitForDisplayed();
-        this.nomeContabilidadeTxt.setValue("Conta com a Gente");
-        this.contadorNomeTxt.setValue("Contador");
-        this.contadorSobrenomeTxt.setValue("de história");
-        this.emailContadortxt.setValue("contador@contacomagente.com.br");
+        this.nomeContabilidadeTxt.setValue(geraNomePJ.geraNomeCompletoPJ());
+        this.contadorNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
+        this.contadorSobrenomeTxt.setValue(geraNomePF.geraSobrenome());
+        this.emailContadortxt.setValue(geraEmail.emailParceiro());
         this.celularContadorTxt.setValue("65999999999");
     }
 

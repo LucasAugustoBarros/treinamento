@@ -6,7 +6,7 @@ Feature: Realizar socio Economico Estudante
     Eu desejo poder realizar formaulrio Socio Economico dos Estudante
     Para que possa ter o registros socios economicos dos Estudantes.
 
-    @teste
+    
     Scenario: Cadastrar um Estudante com sucesso.
         Given eu estou na página do questionario
         When eu preencho todos os campos do formulario Socio economico
