@@ -10,14 +10,17 @@ const path = require('path');
 const GeraNomePJ = require('../../support/util/helpers/geral/geraNomePJ');
 const GeraNomePF = require('../../support/util/helpers/geral/geraNomePF');
 const GeraEmail = require('../../support/util/helpers/geral/geraEmail');
+const GeraLocalizacao = require('../../support/util/helpers/geral/geraLocalizacao');
 const GeraCpfCnpj = require('../../support/util/helpers/geral/geraCpfCnpj');
 const GeraIE = require('../../support/util/helpers/geral/geraIE');
 const GeraCEP = require('../../support/util/helpers/geral/geraCEP');
 const GeraTelefone = require('../../support/util/helpers/geral/geraTelefone');
 
+
 const geraNomePJ = new GeraNomePJ();
 const geraNomePF = new GeraNomePF();
 const geraEmail = new GeraEmail();
+const geraLocalizacao = new GeraLocalizacao();
 const geraCEP = new GeraCEP();
 const geraCpfCnpj = new GeraCpfCnpj();
 const geraIE = new GeraIE();
@@ -87,7 +90,7 @@ class FormCadEmpresaPage {
     informarDadosEmpresa() {
         this.razaoSocialTxt.waitForDisplayed();
         this.razaoSocialTxt.setValue(geraNomePJ.geraNomeCompletoPJ());
-        this.nomeFantasiaTxt.setValue("Nome Fantasia Lucas Barros");
+        this.nomeFantasiaTxt.setValue(geraNomePJ.geraNomeFantasia());
         this.cnpjTxt.setValue(geraCpfCnpj.cnpj());
         this.iETxt.setValue(geraIE.geraIE11());
         this.proprietarioNomeTxt.setValue(geraNomePF.geraPrimeiroNome());
@@ -98,10 +101,10 @@ class FormCadEmpresaPage {
     //Endereço empresa
     informarEndereco() {
         this.enderecoTxt.waitForDisplayed();
-        this.enderecoTxt.setValue("Rua Canjica");
-        this.enderecoContinuacaoTxt.setValue("São João 2021");
-        this.cidadeTxt.setValue("Cuiabá");
-        this.estadoTxt.setValue("Mato Grosso");
+        this.enderecoTxt.setValue(geraLocalizacao.geraLogradouro());
+        this.enderecoContinuacaoTxt.setValue(geraLocalizacao.geraComplemento());
+        this.cidadeTxt.setValue(geraLocalizacao.geraCidade());
+        this.estadoTxt.setValue(geraLocalizacao.geraEstado());
         this.cepTxt.setValue(geraCEP.geraCEPAleatorio());
     }
 

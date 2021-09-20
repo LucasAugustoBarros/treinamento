@@ -39,36 +39,12 @@ class GeraNomePJ {
     geraNomeCompletoUnidadeVeicularPJ() {
         var nomeCompleto;
         nomeCompleto = (GeraNomePJ.geraNome() + " " + GeraNomePJ.geraTipoEmpresa());
-
-        nomeCompletoUnidadeVeicularGravado = {
-            nomeCompletoUnidadeVeicularG: nomeCompleto
-        };
-
-        data = JSON.stringify(nomeCompletoUnidadeVeicularGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/nomePJUnidadeVeicular.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return nomeCompleto;
     }
 
     geraNomeCompletoTransportadoraPJ() {
         var nomeCompleto;
         nomeCompleto = ("TRANSP " + GeraNomePJ.geraNome() + " " + GeraNomePJ.geraTipoEmpresa());
-
-        nomeCompletoTransportadoraPJGravado = {
-            nomeCompletoTransportadoraPJG: nomeCompleto
-        };
-
-        data = JSON.stringify(nomeCompletoTransportadoraPJGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/nomeCompletoTransportadoraPJ.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return nomeCompleto;
     }
 
@@ -76,21 +52,8 @@ class GeraNomePJ {
 
         var nomePJ = nomeCompletoPJ; // o nome completo
         var partes = nomePJ.split(' '); // dividir em partes
-        var tipo_empresa = partes.pop(); // remover o tipo empresa com pop e guardar numa variavel
         var primeiros_nomes = partes.join(' '); // criar uma string separada por espaços(' ') com as partes restantes
         var nomeFantasia = `${primeiros_nomes}`; //resultado
-
-        nomeFantasaTransportadoraGravado = {
-            nomeFantasaTransportadoraG: nomeFantasia
-        };
-
-        data = JSON.stringify(nomeFantasaTransportadoraGravado);
-        toFile = path.join(__dirname, '../../support/util/helpers/gravados/nomePJFantasiaTransportadora.json');
-        stringFile = toFile.toString();
-        fs.writeFile(stringFile, data, (err) => {
-            if (err) throw err;
-        });
-
         return nomeFantasia;
     }
 }
